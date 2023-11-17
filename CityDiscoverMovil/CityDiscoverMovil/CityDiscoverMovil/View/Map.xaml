@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="CityDiscoverMovil.View.Map"
+             BackgroundColor="#4086F5"
+             NavigationPage.HasNavigationBar="false">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar"
+                     IconImageSource="..\Images\Logo.png"
+                     Order="Primary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android"
+                        Value="20,60,20,60" />
+                </OnPlatform>
+            </StackLayout.Padding>
+            <Image HorizontalOptions="Center"
+                   Source="Logo.png"
+                   WidthRequest="230"
+                   HeightRequest="100"
+                   x:Name="ButtonImage" />
+            <!-- Barra de búsqueda -->
+            <SearchBar Placeholder="Search"
+                       Grid.Row="0"
+                       BackgroundColor="#007723"
+                       TextColor="White"
+                       PlaceholderColor="White" />
+            <maps:Map Grid.Row="1"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand"
+                      x:Name="map" />
+            <Button Grid.Row="2"
+                    Text="Add"
+                    BackgroundColor="#007723"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="Adicionar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
